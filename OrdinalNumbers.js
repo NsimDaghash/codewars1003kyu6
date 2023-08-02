@@ -58,6 +58,8 @@ function ordinal(number, brief = false) {
       ? "st"
       : lastTwoDigits % 10 === 2
       ? "d"
+      : lastTwoDigits % 10 === 3
+      ? "d"
       : "th"
     : lastTwoDigits === 11 || lastTwoDigits === 12 || lastTwoDigits === 13
     ? "th"
@@ -70,5 +72,3 @@ function ordinal(number, brief = false) {
     : "th";
   return suffix;
 }
-
-// b.s the code is not 100% working
