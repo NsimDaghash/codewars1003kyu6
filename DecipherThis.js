@@ -39,25 +39,14 @@ function decipherThis(str) {
       restOfString = word.slice(numberString.length);
 
       // Switch the second and last characters
-      if (restOfString.length > 2) {
-        console.log(restOfString[restOfString.length - 1], restOfString[0]);
-        let tmp = restOfString[0];
-        console.log(tmp, restOfString[0]);
-        restOfString[0] = restOfString[restOfString.length - 1];
-        console.log(tmp, restOfString[restOfString.length - 1]);
-        restOfString[restOfString.length - 1] = tmp;
-        console.log(restOfString[restOfString.length - 1]);
-        // restOfString =
-        //   restOfString.slice(0, 1) +
-        //   restOfString.slice(-1) +
-        //   restOfString.slice(1, -1);
+      if (restOfString.length > 1) {
+        // Extract the first and last characters
+        const firstChar = restOfString[0];
+        const lastChar = restOfString[restOfString.length - 1];
+
+        // Switch the first and last characters
+        restOfString = lastChar + restOfString.slice(1, -1) + firstChar;
       }
-      //             if (restOfString.length > 1) {
-      //         restOfString =
-      //           restOfString.slice(0, 1) +
-      //           restOfString.slice(-1) +
-      //           (restOfString.length > 2 ? restOfString.slice(2, -1) : "");
-      //       }
     }
 
     const decipheredWord = firstLetter + restOfString;
